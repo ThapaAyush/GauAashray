@@ -1,0 +1,18 @@
+{
+  "name": "gauaashray",
+  "version": "1.0.0",
+  "description": "GauAashray (गौआश्रय) - Multi-Gaushala Emergency Rescue & Veterinary Care Platform",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && npm install --prefix backend && npm install --prefix frontend && npm install --prefix admin",
+    "dev": "concurrently -n \"BACKEND,FRONTEND,ADMIN\" -c \"yellow,cyan,magenta\" \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\" \"npm run dev --prefix admin\"",
+    "admin": "npm run dev --prefix admin",
+    "start": "npm run start --prefix backend",
+    "seed": "node backend/utils/seed.js",
+    "test:workflow": "node backend/tests/test_workflows.js"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
+
