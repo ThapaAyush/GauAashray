@@ -41,3 +41,5 @@ Thumbs.db
 *.sln
 
 .git-frontend/
+
+.git-backend/
