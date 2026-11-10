@@ -60,10 +60,38 @@ export default function AppRoutes() {
         <Route path="/home" element={<Home />} />
         <Route path="/gaushalas" element={<GaushalaDirectory />} />
         <Route path="/find-gaushala" element={<GaushalaDirectory />} />
-        <Route path="/report-cow" element={<ReportCow />} />
-        <Route path="/request-doctor" element={<RequestDoctor />} />
-        <Route path="/surrender-cow" element={<SurrenderCow />} />
-        <Route path="/track-request" element={<TrackRequest />} />
+        <Route
+          path="/report-cow"
+          element={
+            <ProtectedRoute>
+              <ReportCow />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/request-doctor"
+          element={
+            <ProtectedRoute>
+              <RequestDoctor />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/surrender-cow"
+          element={
+            <ProtectedRoute>
+              <SurrenderCow />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/track-request"
+          element={
+            <ProtectedRoute>
+              <TrackRequest />
+            </ProtectedRoute>
+          }
+        />
 
         {/* Protected Public User Routes */}
         <Route

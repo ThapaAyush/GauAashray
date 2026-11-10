@@ -16,7 +16,16 @@ export default function ProtectedRoute({ children, allowedRoles = [] }) {
   }
 
   if (!user) {
-    return <Navigate to="/login" state={{ from: location }} replace />;
+    return (
+      <Navigate
+        to="/login"
+        state={{
+          from: location,
+          message: 'Please log in first to continue with GauAashray services.'
+        }}
+        replace
+      />
+    );
   }
 
   // Determine current active side (User can only be on one side at one time!)

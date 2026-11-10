@@ -199,6 +199,7 @@ export default function Home() {
                                 {/* Prev / Next Floating Navigation Controls */}
                                 <button
                                     type="button"
+                                    data-allow-guest="true"
                                     onClick={handlePrevImage}
                                     aria-label="Previous Image"
                                     className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-black/40 hover:bg-black/70 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition backdrop-blur-xs cursor-pointer shadow-sm"
@@ -207,6 +208,7 @@ export default function Home() {
                                 </button>
                                 <button
                                     type="button"
+                                    data-allow-guest="true"
                                     onClick={handleNextImage}
                                     aria-label="Next Image"
                                     className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-black/40 hover:bg-black/70 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition backdrop-blur-xs cursor-pointer shadow-sm"
@@ -215,11 +217,12 @@ export default function Home() {
                                 </button>
 
                                 {/* Dot Indicators for Images */}
-                                <div className="absolute bottom-3 right-6 z-20 flex items-center gap-1.5">
+                                <div className="absolute bottom-3 right-6 z-20 flex items-center gap-1.5" data-allow-guest="true">
                                     {HERO_IMAGES.map((_, idx) => (
                                         <button
                                             key={idx}
                                             type="button"
+                                            data-allow-guest="true"
                                             onClick={() => setCurrentImageIndex(idx)}
                                             aria-label={`Go to slide ${idx + 1}`}
                                             className={`transition-all duration-300 rounded-full cursor-pointer ${

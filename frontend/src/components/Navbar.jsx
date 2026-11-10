@@ -88,7 +88,12 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20 gap-2 sm:gap-4">
           
           {/* ================= LEFT: BRAND LOGO ================= */}
-          <Link to="/" className="flex items-center gap-3 shrink-0 group py-1">
+          <Link
+            to="/"
+            id="navbar-brand-logo"
+            data-allow-guest="true"
+            className="flex items-center gap-3 shrink-0 group py-1"
+          >
             <img
               src="/logo.png"
               alt="GauAashray Logo"
@@ -135,6 +140,7 @@ export default function Navbar() {
             <div className="relative" ref={servicesRef}>
               <button
                 type="button"
+                data-allow-guest="true"
                 onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
                 className={`px-3 py-2 rounded-xl flex items-center gap-1.5 transition-colors whitespace-nowrap ${
                   isServicesActive || servicesDropdownOpen
@@ -471,6 +477,7 @@ export default function Navbar() {
 
             <button
               type="button"
+              data-allow-guest="true"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-xl text-stone-700 hover:bg-[#FAF6ED] transition"
               aria-label="Toggle navigation menu"
