@@ -8,16 +8,15 @@ export default defineConfig({
     port: 5174,
     proxy: {
       '/api': {
-        target: 'http://localhost:5000',
+        target: process.env.VITE_BACKEND_URL || 'https://gauaashray-backend.onrender.com',
         changeOrigin: true,
         secure: false,
       },
       '/uploads': {
-        target: 'http://localhost:5000',
+        target: process.env.VITE_BACKEND_URL || 'https://gauaashray-backend.onrender.com',
         changeOrigin: true,
         secure: false,
       }
     }
   }
 })
-

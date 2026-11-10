@@ -4,7 +4,7 @@ const initSocket = (server) => {
   const { Server } = require('socket.io');
   io = new Server(server, {
     cors: {
-      origin: process.env.CLIENT_URL || 'http://localhost:5173',
+      origin: true,
       methods: ['GET', 'POST', 'PUT', 'DELETE'],
       credentials: true
     }
