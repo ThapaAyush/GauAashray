@@ -60,32 +60,23 @@ if (process.env.NODE_ENV !== 'production') {
 // Serve uploaded assets
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// Root handler - auto redirects or provides navigation hub if accessed in browser
+// Root handler - backend service status
 app.get('/', (req, res) => {
-  const clientUrl = process.env.CLIENT_URL || 'http://localhost:5173';
-  const adminUrl = 'http://localhost:5174';
-
   if (req.accepts('html')) {
     return res.send(`
       <!DOCTYPE html>
       <html lang="en">
       <head>
         <meta charset="UTF-8">
-        <title>GauAashray - Platform Gateway</title>
+        <title>GauAashray - Backend API</title>
         <style>
           body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #FAF6ED; color: #372A1C; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 20px; }
-          .card { background: white; border-radius: 18px; padding: 36px; box-shadow: 0 10px 30px rgba(89, 55, 19, 0.08); max-width: 540px; width: 100%; border: 1px solid #EADBCE; text-align: center; }
+          .card { background: white; border-radius: 18px; padding: 36px; box-shadow: 0 10px 30px rgba(89, 55, 19, 0.08); max-width: 480px; width: 100%; border: 1px solid #EADBCE; text-align: center; }
           .logo { font-size: 28px; font-weight: 800; color: #80501D; margin-bottom: 6px; }
-          .tagline { color: #8F7253; font-size: 14px; margin-bottom: 28px; }
-          .badge { display: inline-flex; align-items: center; gap: 6px; background: #E8F4E6; color: #35632A; font-weight: 700; font-size: 12px; padding: 4px 12px; border-radius: 9999px; margin-bottom: 20px; }
+          .tagline { color: #8F7253; font-size: 14px; margin-bottom: 24px; }
+          .badge { display: inline-flex; align-items: center; gap: 8px; background: #E8F4E6; color: #35632A; font-weight: 700; font-size: 13px; padding: 6px 16px; border-radius: 9999px; margin-bottom: 16px; }
           .badge::before { content: ""; width: 8px; height: 8px; background: #419634; border-radius: 50%; display: inline-block; }
-          .links { display: flex; flex-direction: column; gap: 12px; text-align: left; }
-          .link-btn { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 15px; transition: all 0.2s ease; }
-          .link-primary { background: #80501D; color: white; }
-          .link-primary:hover { background: #674015; transform: translateY(-1px); }
-          .link-secondary { background: #FAF3E7; color: #80501D; border: 1px solid #D6A23A; }
-          .link-secondary:hover { background: #F3E6D0; }
-          .info { margin-top: 24px; font-size: 12px; color: #9B8167; line-height: 1.6; }
+          .info { margin-top: 16px; font-size: 12px; color: #9B8167; line-height: 1.6; border-top: 1px solid #F0E6D8; pt: 16px; }
         </style>
       </head>
       <body>
@@ -93,19 +84,8 @@ app.get('/', (req, res) => {
           <div class="logo">GauAashray गौआश्रय</div>
           <div class="tagline">Backend API & Platform Services</div>
           <div class="badge">API Status: Running & Connected to MongoDB Atlas</div>
-          <div class="links">
-            <a class="link-primary" href="${clientUrl}" target="_blank">
-              <span>Open Public & Gaushala Website</span>
-              <span>Port 5173 &rarr;</span>
-            </a>
-            <a class="link-secondary" href="${adminUrl}" target="_blank">
-              <span>Open Admin Panel (Super Admin)</span>
-              <span>Port 5174 &rarr;</span>
-            </a>
-          </div>
           <div class="info">
-            Backend Port: 5000 &bull; Database: MongoDB Atlas (Connected)<br/>
-            Super Admin: <code>ayush108ayush108@gmail.com</code>
+            Backend Port: 5000 &bull; Database: MongoDB Atlas (Connected)
           </div>
         </div>
       </body>
@@ -116,8 +96,8 @@ app.get('/', (req, res) => {
   res.status(200).json({
     status: 'ONLINE',
     service: 'GauAashray Backend API',
-    frontend: clientUrl,
-    admin: adminUrl,
+    database: 'Connected',
+    port: process.env.PORT || 5000,
     health: '/api/health'
   });
 });
