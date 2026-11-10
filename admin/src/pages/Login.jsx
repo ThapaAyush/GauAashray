@@ -155,14 +155,14 @@ const Login = () => {
 
         {/* Footer Links */}
         <div className="text-center mt-6 text-xs text-[#8F7E6F]">
-          <p>Running separately on Port 5174 &bull; GauAashray Administration System</p>
+          <p>GauAashray Administration System</p>
           <a
-            href="http://localhost:5173"
+            href={import.meta.env.VITE_CLIENT_URL || 'https://gau-aashray-frontend.vercel.app'}
             target="_blank"
             rel="noreferrer"
             className="inline-block mt-2 text-[#80501D] font-semibold hover:underline"
           >
-            &larr; Switch to Public & Gaushala Website (Port 5173)
+            &larr; Switch to Public & Gaushala Website
           </a>
         </div>
       </div>

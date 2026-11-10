@@ -95,6 +95,7 @@ app.get('/', (req, res) => {
     status: 'ONLINE',
     service: 'GauAashray Backend API',
     database: 'Connected',
+    client: process.env.CLIENT_URL || 'https://gau-aashray-frontend.vercel.app',
     port: process.env.PORT || 5000,
     health: '/api/health'
   });
