@@ -40,12 +40,6 @@ const HERO_IMAGES = [
         alt: 'Healthy Cattle in Open Pasture',
         tag: 'गौ संवर्धन',
         title: 'Loving Care and Natural Green Pastures'
-    },
-    {
-        url: 'https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=1200&q=80',
-        alt: 'Sacred White Cow',
-        tag: 'सामुदायिक सहयोग',
-        title: 'Bridging Citizens, Gaushalas & Rescue Units'
     }
 ];
 
