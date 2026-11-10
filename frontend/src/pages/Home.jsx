@@ -42,12 +42,6 @@ const HERO_IMAGES = [
         title: 'Loving Care and Natural Green Pastures'
     },
     {
-        url: 'https://images.unsplash.com/photo-1541625602330-2277a4c46182?auto=format&fit=crop&w=1200&q=80',
-        alt: 'Cow Sheltered in Grassy Farm',
-        tag: 'गौ आश्रय धाम',
-        title: 'Dignified Rehabilitation & Lifetime Shelter Support'
-    },
-    {
         url: 'https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=1200&q=80',
         alt: 'Sacred White Cow',
         tag: 'सामुदायिक सहयोग',
