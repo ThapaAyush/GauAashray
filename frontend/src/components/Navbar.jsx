@@ -515,7 +515,7 @@ export default function Navbar() {
           <Link
             to="/home"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3.5 py-2.5 rounded-xl text-sm font-semibold text-stone-800 hover:bg-[#FAF6ED]"
+            className="flex items-center min-h-[44px] px-3.5 py-2.5 rounded-2xl text-sm font-semibold text-stone-800 hover:bg-[#FAF6ED] active:scale-[0.98] transition touch-manipulation"
           >
             Home
           </Link>
@@ -523,7 +523,7 @@ export default function Navbar() {
           <Link
             to="/gaushalas"
             onClick={() => setMobileMenuOpen(false)}
-            className="flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl text-sm font-semibold text-[#80501D] bg-[#FAF6ED]"
+            className="flex items-center gap-2.5 min-h-[44px] px-3.5 py-2.5 rounded-2xl text-sm font-semibold text-[#80501D] bg-[#FAF6ED] active:scale-[0.98] transition touch-manipulation"
           >
             <Building2 className="w-4 h-4 text-[#80501D]" />
             <span>Listed Gaushalas</span>
@@ -536,34 +536,34 @@ export default function Navbar() {
           <Link
             to="/report-cow"
             onClick={() => setMobileMenuOpen(false)}
-            className="flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl text-sm font-semibold text-red-700 bg-red-50/70"
+            className="flex items-center gap-2.5 min-h-[44px] px-3.5 py-2.5 rounded-2xl text-sm font-semibold text-red-700 bg-red-50/80 active:scale-[0.98] transition touch-manipulation"
           >
             <HeartPulse className="w-4 h-4 text-red-600" />
-            <span>Report Street Cow</span>
+            <span>Report Street Cow (Emergency)</span>
           </Link>
 
           <Link
             to="/request-doctor"
             onClick={() => setMobileMenuOpen(false)}
-            className="flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl text-sm font-semibold text-blue-700 bg-blue-50/70"
+            className="flex items-center gap-2.5 min-h-[44px] px-3.5 py-2.5 rounded-2xl text-sm font-semibold text-blue-700 bg-blue-50/80 active:scale-[0.98] transition touch-manipulation"
           >
             <Stethoscope className="w-4 h-4 text-blue-600" />
-            <span>Request Vet Doctor</span>
+            <span>Request Vet Doctor (Home Visit)</span>
           </Link>
 
           <Link
             to="/surrender-cow"
             onClick={() => setMobileMenuOpen(false)}
-            className="flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl text-sm font-semibold text-emerald-800 bg-emerald-50/70"
+            className="flex items-center gap-2.5 min-h-[44px] px-3.5 py-2.5 rounded-2xl text-sm font-semibold text-emerald-800 bg-emerald-50/80 active:scale-[0.98] transition touch-manipulation"
           >
             <Home className="w-4 h-4 text-emerald-600" />
-            <span>Surrender Cow</span>
+            <span>Surrender Cow to Shelter</span>
           </Link>
 
           <Link
             to="/track-request"
             onClick={() => setMobileMenuOpen(false)}
-            className="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-bold text-[#80501D] bg-[#FAF6ED] border border-[#D6A23A]/30"
+            className="flex items-center justify-between min-h-[44px] px-3.5 py-2.5 rounded-2xl text-sm font-bold text-[#80501D] bg-[#FAF6ED] border border-[#D6A23A]/30 active:scale-[0.98] transition touch-manipulation"
           >
             <div className="flex items-center gap-2.5">
               <Compass className="w-4 h-4 text-[#D6A23A]" />
@@ -577,25 +577,25 @@ export default function Navbar() {
               <Link
                 to="/profile"
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl text-sm font-bold text-[#80501D] bg-[#FAF8F5]"
+                className="flex items-center gap-2.5 min-h-[44px] px-3.5 py-2.5 rounded-2xl text-sm font-bold text-[#80501D] bg-[#FAF8F5] active:scale-[0.98] transition touch-manipulation"
               >
                 <User className="w-4 h-4 text-[#80501D]" />
-                <span>My Profile (Both Profiles)</span>
+                <span>My Profile</span>
               </Link>
 
               <Link
                 to="/my-requests"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block px-3.5 py-2.5 rounded-xl text-sm font-semibold text-stone-800 hover:bg-[#FAF6ED]"
+                className="flex items-center min-h-[44px] px-3.5 py-2.5 rounded-2xl text-sm font-semibold text-stone-800 hover:bg-[#FAF6ED] active:scale-[0.98] transition touch-manipulation"
               >
-                My Requests
+                My Submitted Requests
               </Link>
 
               {currentRole === 'GAUSHALA_OWNER' && (
                 <Link
                   to="/gaushala/dashboard"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block px-3.5 py-2.5 rounded-xl text-sm font-bold text-white bg-[#80501D] text-center"
+                  className="flex items-center justify-center min-h-[44px] px-3.5 py-2.5 rounded-2xl text-sm font-bold text-white bg-[#80501D] active:scale-[0.98] transition touch-manipulation shadow-xs"
                 >
                   Gaushala Dashboard Console
                 </Link>
@@ -606,7 +606,7 @@ export default function Navbar() {
                   href={import.meta.env.VITE_ADMIN_URL || 'https://gau-aashray-admin.vercel.app'}
                   target="_blank"
                   rel="noreferrer"
-                  className="block px-3.5 py-2.5 rounded-xl text-sm font-bold text-white bg-stone-900 text-center"
+                  className="flex items-center justify-center min-h-[44px] px-3.5 py-2.5 rounded-2xl text-sm font-bold text-white bg-stone-900 active:scale-[0.98] transition touch-manipulation"
                 >
                   Open Super Admin Portal &rarr;
                 </a>
@@ -620,7 +620,7 @@ export default function Navbar() {
                     logout();
                     navigate('/login');
                   }}
-                  className="w-full text-left px-3.5 py-2.5 text-sm font-bold text-rose-600 hover:bg-rose-50 rounded-xl"
+                  className="w-full flex items-center min-h-[44px] text-left px-3.5 py-2.5 text-sm font-bold text-rose-600 hover:bg-rose-50 rounded-2xl active:scale-[0.98] transition touch-manipulation"
                 >
                   Sign Out ({user.name})
                 </button>
@@ -631,14 +631,14 @@ export default function Navbar() {
               <Link
                 to="/login"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block text-center py-2.5 rounded-xl border border-[#80501D] text-[#80501D] font-bold text-xs"
+                className="flex items-center justify-center min-h-[44px] py-2.5 rounded-2xl border border-[#80501D] text-[#80501D] font-bold text-xs active:scale-95 transition touch-manipulation cursor-pointer"
               >
                 Sign In
               </Link>
               <Link
                 to="/signup"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block text-center py-2.5 rounded-xl bg-[#80501D] text-white font-bold text-xs"
+                className="flex items-center justify-center min-h-[44px] py-2.5 rounded-2xl bg-[#80501D] text-white font-bold text-xs active:scale-95 transition touch-manipulation shadow-xs cursor-pointer"
               >
                 Register
               </Link>

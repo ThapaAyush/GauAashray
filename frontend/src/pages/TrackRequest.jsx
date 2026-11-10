@@ -106,23 +106,23 @@ export default function TrackRequest() {
       </div>
 
       {/* Search Input Box */}
-      <div className="bg-white p-4 rounded-3xl shadow-sm border border-stone-200">
-        <form onSubmit={handleSearch} className="flex items-center gap-2">
+      <div className="bg-white p-3 sm:p-4 rounded-3xl shadow-sm border border-stone-200">
+        <form onSubmit={handleSearch} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
           <input
             type="text"
             value={trackingId}
             onChange={(e) => setTrackingId(e.target.value)}
             placeholder="e.g. RSC-2026-7842, MED-2026-1029, SUR-2026-4401"
             required
-            className="flex-1 px-4 py-2.5 rounded-2xl border border-stone-200 text-sm font-mono uppercase focus:outline-none focus:ring-2 focus:ring-[#D6A23A]"
+            className="flex-1 min-h-[48px] px-4 py-3 rounded-2xl border border-stone-200 text-sm font-mono uppercase focus:outline-none focus:ring-2 focus:ring-[#D6A23A] bg-stone-50/50"
           />
           <button
             type="submit"
             disabled={loading}
-            className="px-5 py-2.5 bg-[#80501D] hover:bg-[#593713] text-white rounded-2xl text-xs font-bold transition flex items-center gap-1.5 shadow-sm"
+            className="min-h-[48px] px-6 py-3 bg-[#80501D] hover:bg-[#593713] active:scale-[0.98] text-white rounded-2xl text-sm font-bold transition flex items-center justify-center gap-2 shadow-sm touch-manipulation cursor-pointer"
           >
             {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Search className="w-4 h-4" />}
-            Track
+            <span>Track Incident</span>
           </button>
         </form>
       </div>

@@ -83,19 +83,21 @@ export default function ReportCow() {
 
       {result ? (
         /* Confirmation Screen */
-        <div className="bg-white p-8 rounded-3xl shadow-xl border border-stone-200 text-center space-y-6">
-          <div className="w-16 h-16 rounded-full bg-green-100 text-green-600 flex items-center justify-center mx-auto">
+        <div className="bg-white p-6 sm:p-8 rounded-3xl shadow-xl border border-stone-200 text-center space-y-6 animate-fadeIn">
+          <div className="w-16 h-16 rounded-full bg-green-100 text-green-600 flex items-center justify-center mx-auto shadow-inner">
             <CheckCircle2 className="w-10 h-10" />
           </div>
 
           <div>
-            <span className="text-xs font-bold text-stone-500 uppercase tracking-widest">
+            <span className="text-[11px] font-extrabold text-stone-500 uppercase tracking-widest">
               Incident Registered & Broadcasted
             </span>
-            <h2 className="text-2xl font-black text-stone-900 mt-1 font-mono">
-              {result.trackingId}
-            </h2>
-            <p className="text-xs text-stone-600 mt-2 max-w-md mx-auto">
+            <div className="mt-2 inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-stone-100 border border-stone-200">
+              <h2 className="text-xl sm:text-2xl font-black text-stone-900 font-mono tracking-wider">
+                {result.trackingId}
+              </h2>
+            </div>
+            <p className="text-xs text-stone-600 mt-3 max-w-md mx-auto leading-relaxed">
               Your report has been broadcasted simultaneously to the <strong>5 nearest registered Gaushalas</strong>.
               The first shelter to accept will claim the case and dispatch their rescue team.
             </p>
@@ -106,9 +108,9 @@ export default function ReportCow() {
               <p className="font-bold text-[#80501D] flex items-center justify-center gap-1.5">
                 <span>📡</span> Alert Sent to {result.nearestShelters.length} Nearest Shelters:
               </p>
-              <div className="space-y-1 text-left">
+              <div className="space-y-1.5 text-left">
                 {result.nearestShelters.map((s, idx) => (
-                  <div key={idx} className="flex items-center justify-between bg-white px-3 py-1.5 rounded-xl border border-[#D6A23A]/20">
+                  <div key={idx} className="flex items-center justify-between bg-white px-3 py-2 rounded-xl border border-[#D6A23A]/20 shadow-2xs">
                     <span className="font-semibold text-stone-900 truncate">{s.gaushalaName}</span>
                     <span className="font-bold text-[#80501D] text-[11px] shrink-0">~{s.distanceKm} km</span>
                   </div>
@@ -119,13 +121,16 @@ export default function ReportCow() {
 
           <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
             <button
+              type="button"
               onClick={() => navigate(`/track-request?id=${result.trackingId}`)}
-              className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#80501D] hover:bg-[#593713] text-white font-bold text-sm shadow-md transition flex items-center justify-center gap-2"
+              className="w-full sm:w-auto min-h-[48px] px-6 py-3.5 rounded-2xl bg-[#80501D] hover:bg-[#593713] active:scale-[0.98] text-white font-bold text-sm shadow-md transition flex items-center justify-center gap-2 touch-manipulation cursor-pointer"
             >
               <Compass className="w-4 h-4 text-[#D6A23A]" />
-              Track Rescue Live
+              <span>Track Rescue Live</span>
+              <ArrowRight className="w-4 h-4" />
             </button>
             <button
+              type="button"
               onClick={() => {
                 setResult(null);
                 setFormData({
@@ -136,7 +141,7 @@ export default function ReportCow() {
                   landmark: ''
                 });
               }}
-              className="w-full sm:w-auto px-6 py-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 font-semibold text-sm transition"
+              className="w-full sm:w-auto min-h-[48px] px-6 py-3.5 rounded-2xl bg-stone-100 hover:bg-stone-200 active:scale-[0.98] text-stone-700 font-semibold text-sm transition touch-manipulation cursor-pointer"
             >
               Report Another Incident
             </button>
@@ -144,7 +149,7 @@ export default function ReportCow() {
         </div>
       ) : (
         /* Report Form */
-        <div className="bg-white p-6 sm:p-10 rounded-3xl shadow-xl border border-stone-200">
+        <div className="bg-white p-5 sm:p-10 rounded-3xl shadow-xl border border-stone-200">
           {error && (
             <div className="mb-6 p-3.5 rounded-xl bg-red-50 border border-red-200 flex items-start gap-2 text-xs text-red-700">
               <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
@@ -181,10 +186,11 @@ export default function ReportCow() {
                           urgency: isCritical ? 'Critical Emergency' : formData.urgency
                         });
                       }}
-                      className={`p-3 rounded-xl border text-xs font-medium text-left transition ${isSelected
-                          ? 'border-red-600 bg-red-50 text-red-800 font-bold'
+                      className={`min-h-[46px] p-3 rounded-2xl border text-xs font-medium text-left transition active:scale-95 touch-manipulation cursor-pointer ${
+                        isSelected
+                          ? 'border-red-600 bg-red-50 text-red-800 font-bold shadow-2xs'
                           : 'border-stone-200 bg-stone-50/50 hover:bg-stone-50 text-stone-700'
-                        }`}
+                      }`}
                     >
                       {cond}
                     </button>
@@ -360,17 +366,17 @@ export default function ReportCow() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3.5 px-4 rounded-xl font-bold text-sm text-white bg-red-600 hover:bg-red-700 shadow-lg shadow-red-600/20 transition flex items-center justify-center gap-2"
+              className="w-full min-h-[52px] py-3.5 px-4 rounded-2xl font-black text-sm text-white bg-red-600 hover:bg-red-700 active:scale-[0.98] shadow-lg shadow-red-600/25 transition flex items-center justify-center gap-2 touch-manipulation cursor-pointer"
             >
               {loading ? (
                 <>
-                  <Loader2 className="w-4 h-4 animate-spin" />
-                  Matching Nearby Gaushala Ambulance...
+                  <Loader2 className="w-5 h-5 animate-spin" />
+                  <span>Matching Nearby Gaushala Ambulance...</span>
                 </>
               ) : (
                 <>
-                  <HeartPulse className="w-4 h-4" />
-                  Dispatch Emergency Rescue Report
+                  <HeartPulse className="w-5 h-5" />
+                  <span>Dispatch Emergency Rescue Report</span>
                 </>
               )}
             </button>

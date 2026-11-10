@@ -64,39 +64,44 @@ export default function RequestDoctor() {
       </div>
 
       {result ? (
-        <div className="bg-white p-8 rounded-3xl shadow-xl border border-stone-200 text-center space-y-6">
-          <div className="w-16 h-16 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mx-auto">
+        <div className="bg-white p-6 sm:p-8 rounded-3xl shadow-xl border border-stone-200 text-center space-y-6 animate-fadeIn">
+          <div className="w-16 h-16 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mx-auto shadow-inner">
             <CheckCircle2 className="w-10 h-10" />
           </div>
 
           <div>
-            <span className="text-xs font-bold text-stone-500 uppercase tracking-widest">
+            <span className="text-[11px] font-extrabold text-stone-500 uppercase tracking-widest">
               Doctor Request Scheduled
             </span>
-            <h2 className="text-2xl font-black text-stone-900 mt-1 font-mono">
-              {result.requestId}
-            </h2>
-            <p className="text-xs text-stone-600 mt-2 max-w-md mx-auto">
-              Your veterinary care request has been broadcasted simultaneously to the 5 nearest Gaushala clinics based on your GPS location. You can track live doctor assignment and dispatch in real time.
+            <div className="mt-2 inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-stone-100 border border-stone-200">
+              <h2 className="text-xl sm:text-2xl font-black text-stone-900 font-mono tracking-wider">
+                {result.requestId}
+              </h2>
+            </div>
+            <p className="text-xs text-stone-600 mt-3 max-w-md mx-auto leading-relaxed">
+              Your veterinary care request has been broadcasted simultaneously to the <strong>5 nearest Gaushala clinics</strong> based on your GPS location. You can track live doctor assignment and dispatch in real time.
             </p>
           </div>
 
           <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
             <button
+              type="button"
               onClick={() => navigate(`/track-request?id=${result.requestId}`)}
-              className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#80501D] hover:bg-[#593713] text-white font-bold text-sm shadow-md transition flex items-center justify-center gap-2"
+              className="w-full sm:w-auto min-h-[48px] px-6 py-3.5 rounded-2xl bg-[#80501D] hover:bg-[#593713] active:scale-[0.98] text-white font-bold text-sm shadow-md transition flex items-center justify-center gap-2 touch-manipulation cursor-pointer"
             >
               <Compass className="w-4 h-4 text-[#D6A23A]" />
-              Track Live Request
+              <span>Track Live Request</span>
               <ArrowRight className="w-4 h-4" />
             </button>
             <button
+              type="button"
               onClick={() => navigate('/my-requests')}
-              className="w-full sm:w-auto px-5 py-3 rounded-xl bg-[#FAF6ED] hover:bg-[#FAF6ED]/80 text-[#80501D] border border-[#D6A23A]/40 font-bold text-sm transition"
+              className="w-full sm:w-auto min-h-[48px] px-5 py-3.5 rounded-2xl bg-[#FAF6ED] hover:bg-[#FAF6ED]/80 active:scale-[0.98] text-[#80501D] border border-[#D6A23A]/40 font-bold text-sm transition touch-manipulation cursor-pointer"
             >
               View In My Requests
             </button>
             <button
+              type="button"
               onClick={() => {
                 setResult(null);
                 setFormData({
@@ -108,7 +113,7 @@ export default function RequestDoctor() {
                   photographs: []
                 });
               }}
-              className="w-full sm:w-auto px-4 py-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 font-semibold text-xs transition"
+              className="w-full sm:w-auto min-h-[48px] px-5 py-3.5 rounded-2xl bg-stone-100 hover:bg-stone-200 active:scale-[0.98] text-stone-700 font-semibold text-sm transition touch-manipulation cursor-pointer"
             >
               Book Another Visit
             </button>
@@ -247,17 +252,17 @@ export default function RequestDoctor() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3.5 px-4 rounded-xl font-bold text-sm text-white bg-[#80501D] hover:bg-[#593713] shadow-md transition flex items-center justify-center gap-2"
+              className="w-full min-h-[52px] py-3.5 px-4 rounded-2xl font-black text-sm text-white bg-[#80501D] hover:bg-[#593713] active:scale-[0.98] shadow-md transition flex items-center justify-center gap-2 touch-manipulation cursor-pointer"
             >
               {loading ? (
                 <>
-                  <Loader2 className="w-4 h-4 animate-spin" />
-                  Finding Nearest Veterinary Doctor...
+                  <Loader2 className="w-5 h-5 animate-spin" />
+                  <span>Finding Nearest Veterinary Doctor...</span>
                 </>
               ) : (
                 <>
-                  <Stethoscope className="w-4 h-4 text-[#D6A23A]" />
-                  Submit Doctor Request
+                  <Stethoscope className="w-5 h-5 text-[#D6A23A]" />
+                  <span>Submit Doctor Request</span>
                 </>
               )}
             </button>

@@ -119,21 +119,21 @@ export default function Home() {
                             </p>
 
                             {/* Quick Action Badges */}
-                            <div className="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+                            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4">
                                 <Link
                                     to="/report-cow"
-                                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-red-600 hover:bg-red-700 text-white font-bold text-sm shadow-lg shadow-red-600/20 transition transform hover:-translate-y-0.5"
+                                    className="inline-flex items-center justify-center gap-2 px-6 py-4 min-h-[50px] rounded-2xl bg-red-600 hover:bg-red-700 active:scale-[0.98] text-white font-bold text-sm shadow-lg shadow-red-600/20 transition touch-manipulation cursor-pointer"
                                 >
                                     <HeartPulse className="w-5 h-5" />
-                                    Report Street Cow
+                                    <span>Report Street Cow</span>
                                 </Link>
 
                                 <Link
                                     to="/request-doctor"
-                                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-[#80501D] hover:bg-[#593713] text-white font-bold text-sm shadow-md transition transform hover:-translate-y-0.5"
+                                    className="inline-flex items-center justify-center gap-2 px-6 py-4 min-h-[50px] rounded-2xl bg-[#80501D] hover:bg-[#593713] active:scale-[0.98] text-white font-bold text-sm shadow-md transition touch-manipulation cursor-pointer"
                                 >
                                     <Stethoscope className="w-5 h-5 text-[#D6A23A]" />
-                                    Request Doctor
+                                    <span>Request Doctor</span>
                                 </Link>
                             </div>
 
@@ -258,9 +258,9 @@ export default function Home() {
                         <div className="pt-6">
                             <Link
                                 to="/report-cow"
-                                className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-sm transition"
+                                className="w-full min-h-[48px] inline-flex items-center justify-center gap-2 py-3.5 px-4 rounded-2xl bg-red-600 hover:bg-red-700 active:scale-[0.98] text-white font-bold text-sm shadow-md shadow-red-600/15 transition touch-manipulation cursor-pointer"
                             >
-                                Report Cow
+                                <span>Report Cow</span>
                                 <ArrowRight className="w-4 h-4" />
                             </Link>
                         </div>
@@ -282,9 +282,9 @@ export default function Home() {
                         <div className="pt-6">
                             <Link
                                 to="/request-doctor"
-                                className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#80501D] hover:bg-[#593713] text-white font-bold text-sm transition"
+                                className="w-full min-h-[48px] inline-flex items-center justify-center gap-2 py-3.5 px-4 rounded-2xl bg-[#80501D] hover:bg-[#593713] active:scale-[0.98] text-white font-bold text-sm shadow-md transition touch-manipulation cursor-pointer"
                             >
-                                Request Doctor
+                                <span>Request Doctor</span>
                                 <ArrowRight className="w-4 h-4" />
                             </Link>
                         </div>
@@ -306,9 +306,9 @@ export default function Home() {
                         <div className="pt-6">
                             <Link
                                 to="/surrender-cow"
-                                className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#557B42] hover:bg-[#436333] text-white font-bold text-sm transition"
+                                className="w-full min-h-[48px] inline-flex items-center justify-center gap-2 py-3.5 px-4 rounded-2xl bg-[#557B42] hover:bg-[#436333] active:scale-[0.98] text-white font-bold text-sm shadow-md transition touch-manipulation cursor-pointer"
                             >
-                                Give a Cow
+                                <span>Give a Cow</span>
                                 <ArrowRight className="w-4 h-4" />
                             </Link>
                         </div>

@@ -61,26 +61,29 @@ export default function ImageUpload({ value = [], onChange, maxFiles = 3, label 
 
       <div className="grid grid-cols-3 gap-3">
         {value.map((url, i) => (
-          <div key={i} className="relative aspect-square rounded-xl overflow-hidden border border-stone-200 bg-stone-100 group">
+          <div key={i} className="relative aspect-square rounded-2xl overflow-hidden border border-stone-200 bg-stone-100 group shadow-2xs">
             <img src={url} alt={`Upload ${i}`} className="w-full h-full object-cover" />
             <button
               type="button"
               onClick={() => removeImage(i)}
-              className="absolute top-1.5 right-1.5 p-1 bg-stone-900/70 hover:bg-red-600 text-white rounded-full transition"
+              data-allow-guest="true"
+              aria-label="Remove image"
+              className="absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-stone-900/80 hover:bg-red-600 active:scale-90 text-white rounded-full transition touch-manipulation shadow-md"
             >
-              <X className="w-3.5 h-3.5" />
+              <X className="w-4 h-4" />
             </button>
           </div>
         ))}
 
         {value.length < maxFiles && (
-          <label className="flex flex-col items-center justify-center aspect-square border-2 border-dashed border-[#D6A23A]/50 hover:border-[#80501D] bg-[#FAF6ED]/50 hover:bg-[#FAF6ED] rounded-xl cursor-pointer transition p-2 text-center group">
+          <label className="flex flex-col items-center justify-center aspect-square border-2 border-dashed border-[#D6A23A]/60 hover:border-[#80501D] active:scale-95 bg-[#FAF6ED]/70 hover:bg-[#FAF6ED] rounded-2xl cursor-pointer transition p-3 text-center group touch-manipulation">
             {uploading ? (
-              <Loader2 className="w-6 h-6 text-[#80501D] animate-spin" />
+              <Loader2 className="w-7 h-7 text-[#80501D] animate-spin" />
             ) : (
               <>
-                <Camera className="w-6 h-6 text-[#80501D] group-hover:scale-110 transition mb-1" />
-                <span className="text-xs font-medium text-[#80501D]">Add Photo</span>
+                <Camera className="w-7 h-7 text-[#80501D] group-hover:scale-110 transition mb-1.5" />
+                <span className="text-xs font-bold text-[#80501D]">Add Photo</span>
+                <span className="text-[10px] text-stone-400 mt-0.5">Camera / Gallery</span>
               </>
             )}
             <input

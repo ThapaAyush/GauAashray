@@ -43,41 +43,41 @@ export default function MyRequests() {
         </div>
 
         {/* Tab Switcher */}
-        <div className="flex items-center gap-1.5 p-1 rounded-2xl bg-white border border-stone-200">
+        <div className="flex items-center gap-1.5 p-1 rounded-2xl bg-white border border-stone-200 overflow-x-auto no-scrollbar w-full sm:w-auto shadow-2xs">
           <button
             onClick={() => setActiveTab('RESCUE')}
-            className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold transition ${
+            className={`flex-1 sm:flex-initial flex items-center justify-center gap-1.5 min-h-[44px] px-4 py-2 rounded-xl text-xs font-bold transition active:scale-95 touch-manipulation cursor-pointer whitespace-nowrap ${
               activeTab === 'RESCUE'
                 ? 'bg-[#80501D] text-white shadow-sm'
-                : 'text-stone-600 hover:text-stone-900'
+                : 'text-stone-600 hover:text-stone-900 hover:bg-stone-50'
             }`}
           >
-            <HeartPulse className="w-3.5 h-3.5" />
-            Rescue ({rescues.length})
+            <HeartPulse className="w-3.5 h-3.5 shrink-0" />
+            <span>Rescue ({rescues.length})</span>
           </button>
 
           <button
             onClick={() => setActiveTab('MEDICAL')}
-            className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold transition ${
+            className={`flex-1 sm:flex-initial flex items-center justify-center gap-1.5 min-h-[44px] px-4 py-2 rounded-xl text-xs font-bold transition active:scale-95 touch-manipulation cursor-pointer whitespace-nowrap ${
               activeTab === 'MEDICAL'
                 ? 'bg-[#80501D] text-white shadow-sm'
-                : 'text-stone-600 hover:text-stone-900'
+                : 'text-stone-600 hover:text-stone-900 hover:bg-stone-50'
             }`}
           >
-            <Stethoscope className="w-3.5 h-3.5" />
-            Doctor ({medical.length})
+            <Stethoscope className="w-3.5 h-3.5 shrink-0" />
+            <span>Doctor ({medical.length})</span>
           </button>
 
           <button
             onClick={() => setActiveTab('SURRENDER')}
-            className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold transition ${
+            className={`flex-1 sm:flex-initial flex items-center justify-center gap-1.5 min-h-[44px] px-4 py-2 rounded-xl text-xs font-bold transition active:scale-95 touch-manipulation cursor-pointer whitespace-nowrap ${
               activeTab === 'SURRENDER'
                 ? 'bg-[#80501D] text-white shadow-sm'
-                : 'text-stone-600 hover:text-stone-900'
+                : 'text-stone-600 hover:text-stone-900 hover:bg-stone-50'
             }`}
           >
-            <Home className="w-3.5 h-3.5" />
-            Surrender ({surrenders.length})
+            <Home className="w-3.5 h-3.5 shrink-0" />
+            <span>Surrender ({surrenders.length})</span>
           </button>
         </div>
       </div>
@@ -138,10 +138,10 @@ export default function MyRequests() {
                       </span>
                       <Link
                         to={`/track-request?id=${r.trackingId}`}
-                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#FAF6ED] hover:bg-[#FAF6ED]/80 text-[#80501D] border border-[#D6A23A]/40 text-xs font-bold transition"
+                        className="w-full sm:w-auto min-h-[44px] inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#FAF6ED] hover:bg-[#FAF6ED]/80 active:scale-95 text-[#80501D] border border-[#D6A23A]/40 text-xs font-bold transition touch-manipulation shadow-2xs"
                       >
-                        <Compass className="w-3.5 h-3.5" />
-                        Track Live
+                        <Compass className="w-4 h-4 text-[#D6A23A]" />
+                        <span>Track Live Status</span>
                       </Link>
                     </div>
                   </div>
@@ -199,10 +199,10 @@ export default function MyRequests() {
                       )}
                       <Link
                         to={`/track-request?id=${m.requestId}`}
-                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#FAF6ED] hover:bg-[#FAF6ED]/80 text-[#80501D] border border-[#D6A23A]/40 text-xs font-bold transition"
+                        className="w-full sm:w-auto min-h-[44px] inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#FAF6ED] hover:bg-[#FAF6ED]/80 active:scale-95 text-[#80501D] border border-[#D6A23A]/40 text-xs font-bold transition touch-manipulation shadow-2xs"
                       >
-                        <Compass className="w-3.5 h-3.5" />
-                        Track Live
+                        <Compass className="w-4 h-4 text-[#D6A23A]" />
+                        <span>Track Live Status</span>
                       </Link>
                     </div>
                   </div>
@@ -255,10 +255,10 @@ export default function MyRequests() {
                       </span>
                       <Link
                         to={`/track-request?id=${s.requestId}`}
-                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#FAF6ED] hover:bg-[#FAF6ED]/80 text-[#80501D] border border-[#D6A23A]/40 text-xs font-bold transition"
+                        className="w-full sm:w-auto min-h-[44px] inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#FAF6ED] hover:bg-[#FAF6ED]/80 active:scale-95 text-[#80501D] border border-[#D6A23A]/40 text-xs font-bold transition touch-manipulation shadow-2xs"
                       >
-                        <Compass className="w-3.5 h-3.5" />
-                        Track Live
+                        <Compass className="w-4 h-4 text-[#D6A23A]" />
+                        <span>Track Live Status</span>
                       </Link>
                     </div>
                   </div>

@@ -153,7 +153,7 @@ export default function GaushalaDirectory() {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="Search by Gaushala name, city, state, or PIN code..."
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-[#80501D] bg-stone-50/50"
+                className="w-full min-h-[46px] pl-10 pr-4 py-2.5 rounded-2xl border border-stone-200 text-sm focus:outline-none focus:border-[#80501D] bg-stone-50/50"
               />
             </div>
 
@@ -162,7 +162,7 @@ export default function GaushalaDirectory() {
               <select
                 value={selectedState}
                 onChange={(e) => setSelectedState(e.target.value)}
-                className="w-full px-3 py-2.5 rounded-xl border border-stone-200 text-sm bg-white focus:outline-none focus:border-[#80501D]"
+                className="w-full min-h-[46px] px-3.5 py-2.5 rounded-2xl border border-stone-200 text-sm bg-white focus:outline-none focus:border-[#80501D]"
               >
                 <option value="ALL">All States</option>
                 {stateOptions.map((st) => (
@@ -175,13 +175,13 @@ export default function GaushalaDirectory() {
           </div>
 
           {/* Service Pills */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-1 text-xs">
+          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1 text-xs">
             <span className="text-stone-400 font-bold uppercase text-[10px] shrink-0 mr-1">
               Services:
             </span>
             <button
               onClick={() => setSelectedService('ALL')}
-              className={`px-3 py-1.5 rounded-xl font-bold transition shrink-0 ${
+              className={`min-h-[42px] px-3.5 py-2 rounded-xl font-bold transition shrink-0 active:scale-95 touch-manipulation cursor-pointer ${
                 selectedService === 'ALL'
                   ? 'bg-[#80501D] text-white shadow-xs'
                   : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
@@ -191,7 +191,7 @@ export default function GaushalaDirectory() {
             </button>
             <button
               onClick={() => setSelectedService('RESCUE')}
-              className={`px-3 py-1.5 rounded-xl font-bold flex items-center gap-1.5 transition shrink-0 ${
+              className={`min-h-[42px] px-3.5 py-2 rounded-xl font-bold flex items-center gap-1.5 transition shrink-0 active:scale-95 touch-manipulation cursor-pointer ${
                 selectedService === 'RESCUE'
                   ? 'bg-red-600 text-white shadow-xs'
                   : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
@@ -202,7 +202,7 @@ export default function GaushalaDirectory() {
             </button>
             <button
               onClick={() => setSelectedService('VETERINARY')}
-              className={`px-3 py-1.5 rounded-xl font-bold flex items-center gap-1.5 transition shrink-0 ${
+              className={`min-h-[42px] px-3.5 py-2 rounded-xl font-bold flex items-center gap-1.5 transition shrink-0 active:scale-95 touch-manipulation cursor-pointer ${
                 selectedService === 'VETERINARY'
                   ? 'bg-blue-600 text-white shadow-xs'
                   : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
@@ -213,7 +213,7 @@ export default function GaushalaDirectory() {
             </button>
             <button
               onClick={() => setSelectedService('SURRENDER')}
-              className={`px-3 py-1.5 rounded-xl font-bold flex items-center gap-1.5 transition shrink-0 ${
+              className={`min-h-[42px] px-3.5 py-2 rounded-xl font-bold flex items-center gap-1.5 transition shrink-0 active:scale-95 touch-manipulation cursor-pointer ${
                 selectedService === 'SURRENDER'
                   ? 'bg-[#557B42] text-white shadow-xs'
                   : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
@@ -403,14 +403,14 @@ export default function GaushalaDirectory() {
                   </div>
 
                   {/* Card Action Footer */}
-                  <div className="p-4 bg-stone-50 border-t border-stone-100 flex items-center justify-between gap-2">
+                  <div className="p-4 bg-stone-50 border-t border-stone-100 flex items-center justify-between gap-2.5">
                     {g.phone ? (
                       <a
                         href={`tel:${g.phone}`}
-                        className="flex-1 py-2 px-3 rounded-xl bg-white border border-stone-200 hover:bg-stone-100 text-stone-800 text-xs font-bold text-center transition flex items-center justify-center gap-1.5"
+                        className="flex-1 min-h-[46px] py-2.5 px-3 rounded-2xl bg-white border border-stone-200 hover:bg-stone-100 active:scale-95 text-stone-800 text-xs font-bold text-center transition flex items-center justify-center gap-1.5 touch-manipulation shadow-2xs cursor-pointer"
                       >
                         <Phone className="w-3.5 h-3.5 text-[#80501D]" />
-                        Call Shelter
+                        <span>Call Shelter</span>
                       </a>
                     ) : (
                       <span className="flex-1 text-center text-xs text-stone-400">Verified Shelter</span>
@@ -418,10 +418,10 @@ export default function GaushalaDirectory() {
 
                     <Link
                       to="/report-cow"
-                      className="flex-1 py-2 px-3 rounded-xl bg-[#80501D] hover:bg-[#593713] text-white text-xs font-bold text-center transition shadow-xs flex items-center justify-center gap-1.5"
+                      className="flex-1 min-h-[46px] py-2.5 px-3 rounded-2xl bg-[#80501D] hover:bg-[#593713] active:scale-95 text-white text-xs font-bold text-center transition shadow-xs flex items-center justify-center gap-1.5 touch-manipulation cursor-pointer"
                     >
                       <HeartPulse className="w-3.5 h-3.5" />
-                      Report Cow
+                      <span>Report Cow</span>
                     </Link>
                   </div>
                 </div>

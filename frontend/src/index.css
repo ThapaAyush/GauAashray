@@ -3,10 +3,45 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --target-size: 40px;
+  }
+
+  @media (pointer: coarse) {
+    :root {
+      --target-size: 44px;
+    }
+  }
+
   body {
     @apply bg-[#F8F7F3] text-stone-800 font-sans;
     -webkit-tap-highlight-color: transparent;
+    overflow-wrap: break-word;
   }
+
+  /* Prevent iOS automatic zoom-in when focusing inputs on small screens */
+  @media (max-width: 639px) {
+    input, select, textarea {
+      font-size: 16px !important;
+    }
+  }
+}
+
+/* Safe-area utility classes for modern mobile devices (notches and home bars) */
+.pb-safe {
+  padding-bottom: max(1rem, env(safe-area-inset-bottom, 0px));
+}
+.pt-safe {
+  padding-top: max(1rem, env(safe-area-inset-top, 0px));
+}
+
+/* Hide scrollbar for clean horizontal swipe on mobile pills/tabs */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Custom scrollbars */

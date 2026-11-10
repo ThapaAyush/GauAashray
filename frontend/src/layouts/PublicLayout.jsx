@@ -3,6 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import LoginRequiredModal from '../components/LoginRequiredModal';
+import MobileBottomNav from '../components/MobileBottomNav';
 import { useAuth } from '../context/AuthContext';
 
 export default function PublicLayout() {
@@ -66,6 +67,9 @@ export default function PublicLayout() {
         <Outlet />
       </main>
       <Footer />
+
+      {/* Modern Native-like Mobile Bottom Navigation Bar */}
+      <MobileBottomNav />
 
       {/* Global Login Required Modal for Unauthenticated Visitors */}
       <LoginRequiredModal
