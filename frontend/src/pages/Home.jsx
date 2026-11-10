@@ -42,12 +42,6 @@ const HERO_IMAGES = [
         title: 'Loving Care and Natural Green Pastures'
     },
     {
-        url: 'https://images.unsplash.com/photo-1568644396922-5c3bfae12521?auto=format&fit=crop&w=1200&q=80',
-        alt: 'Close-up of Gentle Cow',
-        tag: 'चिकित्सा सेवा',
-        title: 'Dedicated Veterinary Doctors & Daily Health Monitoring'
-    },
-    {
         url: 'https://images.unsplash.com/photo-1582533561751-ef6f6ab93a2e?auto=format&fit=crop&w=1200&q=80',
         alt: 'Young Calf in Golden Sunlight',
         tag: 'मातृवत गौमाता',
@@ -178,7 +172,7 @@ export default function Home() {
                             </div>
                         </div>
 
-                        {/* Right Hero Image Slider Card (8 Images, 30s auto-rotation) */}
+                        {/* Right Hero Image Slider Card */}
                         <div className="lg:col-span-5 relative group">
                             <div
                                 onMouseEnter={() => setIsHovered(true)}
@@ -238,7 +232,7 @@ export default function Home() {
                                     <ChevronRight className="w-4 h-4" />
                                 </button>
 
-                                {/* Dot Indicators for all 8 Images */}
+                                {/* Dot Indicators for Images */}
                                 <div className="absolute bottom-3 right-6 z-20 flex items-center gap-1.5">
                                     {HERO_IMAGES.map((_, idx) => (
                                         <button
