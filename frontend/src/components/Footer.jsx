@@ -1,35 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   HeartPulse,
   Stethoscope,
   Home,
   Compass,
-  Building2,
-  ShieldCheck,
-  Heart,
-  Mail,
-  MapPin,
-  ArrowRight,
-  CheckCircle2,
-  PhoneCall,
-  Sparkles,
-  Users
+  ShieldCheck
 } from 'lucide-react';
 
 export default function Footer() {
-  const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
-
-  const handleSubscribe = (e) => {
-    e.preventDefault();
-    if (email.trim()) {
-      setSubscribed(true);
-      setEmail('');
-      setTimeout(() => setSubscribed(false), 5000);
-    }
-  };
-
   return (
     <footer className="bg-[#FAF6ED] border-t-2 border-[#D6A23A]/25 pt-14 pb-8 mt-20 text-stone-700 relative overflow-hidden">
       {/* Decorative Warm Ambient Glows */}
@@ -138,9 +117,9 @@ export default function Footer() {
         </div>
 
         {/* Main Footer Links & Information Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 pt-4">
-          {/* Brand & Mission Column (Span 4) */}
-          <div className="lg:col-span-4 space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 pt-4">
+          {/* Brand & Mission Column (Span 5) */}
+          <div className="lg:col-span-5 space-y-4">
             <Link to="/" className="inline-flex items-center gap-3 group">
               <img
                 src="/logo.png"
@@ -175,8 +154,8 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Citizen Services Column (Span 3) */}
-          <div className="lg:col-span-3 space-y-3">
+          {/* Citizen Services Column (Span 4) */}
+          <div className="lg:col-span-4 space-y-3">
             <h4 className="text-xs font-black uppercase tracking-wider text-[#80501D] pb-1 border-b border-[#E8E1D5]">
               Citizen Services
             </h4>
@@ -245,8 +224,8 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Shelter Operations Column (Span 2) */}
-          <div className="lg:col-span-2 space-y-3">
+          {/* Shelter Operations Column (Span 3) */}
+          <div className="lg:col-span-3 space-y-3">
             <h4 className="text-xs font-black uppercase tracking-wider text-[#80501D] pb-1 border-b border-[#E8E1D5]">
               For Shelters
             </h4>
@@ -293,54 +272,6 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-          </div>
-
-          {/* Mission Newsletter & Contact Strip (Span 3) */}
-          <div className="lg:col-span-3 space-y-4">
-            <div className="p-4 rounded-2xl bg-white border border-[#D6A23A]/30 shadow-xs space-y-3">
-              <div className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-lg bg-[#FAF6ED] text-[#80501D] flex items-center justify-center">
-                  <Mail className="w-4 h-4 text-[#D6A23A]" />
-                </div>
-                <div>
-                  <h4 className="text-xs font-bold text-stone-900 leading-tight">
-                    Gau Seva Newsletter
-                  </h4>
-                  <p className="text-[10px] text-stone-500">
-                    Monthly rescue stories & medical updates
-                  </p>
-                </div>
-              </div>
-
-              {subscribed ? (
-                <div className="p-2.5 rounded-xl bg-green-50 border border-green-200 text-[11px] font-semibold text-green-800 flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
-                  <span>Thank you for joining our mission!</span>
-                </div>
-              ) : (
-                <form onSubmit={handleSubscribe} className="space-y-2">
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter your email"
-                    required
-                    className="w-full px-3 py-2 text-xs rounded-xl border border-stone-200 bg-stone-50/60 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#D6A23A]"
-                  />
-                  <button
-                    type="submit"
-                    className="w-full py-2 px-3 rounded-xl bg-[#80501D] hover:bg-[#593713] text-white text-xs font-bold transition flex items-center justify-center gap-1.5 shadow-xs"
-                  >
-                    <span>Stay Connected</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
-                </form>
-              )}
-
-              <p className="text-[10px] text-stone-400">
-                100% spam-free. You can unsubscribe at any time.
-              </p>
-            </div>
           </div>
         </div>
 
