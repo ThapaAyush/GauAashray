@@ -42,7 +42,8 @@ export default function Footer() {
           {/* Feature 1 */}
           <Link
             to="/report-cow"
-            className="p-4 rounded-2xl bg-white/90 hover:bg-white border border-[#E8E1D5] hover:border-red-300 shadow-xs hover:shadow-md transition-all group flex items-start gap-3.5"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="p-4 rounded-2xl bg-white/90 hover:bg-white border border-[#E8E1D5] hover:border-red-300 shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 group flex items-start gap-3.5 cursor-pointer"
           >
             <div className="w-10 h-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center shrink-0 group-hover:bg-red-600 group-hover:text-white transition">
               <HeartPulse className="w-5 h-5" />
@@ -65,7 +66,8 @@ export default function Footer() {
           {/* Feature 2 */}
           <Link
             to="/request-doctor"
-            className="p-4 rounded-2xl bg-white/90 hover:bg-white border border-[#E8E1D5] hover:border-blue-300 shadow-xs hover:shadow-md transition-all group flex items-start gap-3.5"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="p-4 rounded-2xl bg-white/90 hover:bg-white border border-[#E8E1D5] hover:border-blue-300 shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 group flex items-start gap-3.5 cursor-pointer"
           >
             <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 group-hover:bg-blue-600 group-hover:text-white transition">
               <Stethoscope className="w-5 h-5" />
@@ -88,7 +90,8 @@ export default function Footer() {
           {/* Feature 3 */}
           <Link
             to="/surrender-cow"
-            className="p-4 rounded-2xl bg-white/90 hover:bg-white border border-[#E8E1D5] hover:border-emerald-300 shadow-xs hover:shadow-md transition-all group flex items-start gap-3.5"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="p-4 rounded-2xl bg-white/90 hover:bg-white border border-[#E8E1D5] hover:border-emerald-300 shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 group flex items-start gap-3.5 cursor-pointer"
           >
             <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0 group-hover:bg-emerald-700 group-hover:text-white transition">
               <Home className="w-5 h-5" />
@@ -111,7 +114,8 @@ export default function Footer() {
           {/* Feature 4 */}
           <Link
             to="/track-request"
-            className="p-4 rounded-2xl bg-white/90 hover:bg-white border border-[#E8E1D5] hover:border-[#D6A23A] shadow-xs hover:shadow-md transition-all group flex items-start gap-3.5"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="p-4 rounded-2xl bg-white/90 hover:bg-white border border-[#E8E1D5] hover:border-[#D6A23A] shadow-xs hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 group flex items-start gap-3.5 cursor-pointer"
           >
             <div className="w-10 h-10 rounded-xl bg-amber-50 text-[#80501D] flex items-center justify-center shrink-0 group-hover:bg-[#80501D] group-hover:text-white transition">
               <Compass className="w-5 h-5 text-[#D6A23A] group-hover:text-white" />
