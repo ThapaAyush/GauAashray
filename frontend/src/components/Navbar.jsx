@@ -304,11 +304,11 @@ export default function Navbar() {
                 {/* SUPER ADMIN SHORTCUT */}
                 {user.role === 'SUPER_ADMIN' && (
                   <a
-                    href="http://localhost:5174"
+                    href={import.meta.env.VITE_ADMIN_URL || 'https://gau-aashray-admin.vercel.app'}
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold bg-stone-900 text-white rounded-full hover:bg-stone-800 transition shadow-xs whitespace-nowrap"
-                    title="Open Super Admin Portal on Port 5174"
+                    title="Open Super Admin Portal"
                   >
                     <Shield className="w-3.5 h-3.5 text-[#D6A23A]" />
                     <span>Admin</span>
@@ -407,7 +407,7 @@ export default function Navbar() {
 
                       {user.role === 'SUPER_ADMIN' && (
                         <a
-                          href="http://localhost:5174"
+                          href={import.meta.env.VITE_ADMIN_URL || 'https://gau-aashray-admin.vercel.app'}
                           target="_blank"
                           rel="noreferrer"
                           className="flex items-center justify-between px-4 py-2 text-xs font-semibold text-stone-700 hover:bg-[#FAF6ED] transition"
@@ -596,12 +596,12 @@ export default function Navbar() {
 
               {user.role === 'SUPER_ADMIN' && (
                 <a
-                  href="http://localhost:5174"
+                  href={import.meta.env.VITE_ADMIN_URL || 'https://gau-aashray-admin.vercel.app'}
                   target="_blank"
                   rel="noreferrer"
                   className="block px-3.5 py-2.5 rounded-xl text-sm font-bold text-white bg-stone-900 text-center"
                 >
-                  Open Super Admin Portal (5174) &rarr;
+                  Open Super Admin Portal &rarr;
                 </a>
               )}
 
