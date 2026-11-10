@@ -277,12 +277,8 @@ export default function Footer() {
 
         {/* Bottom Bar / Copyright & Trust Badges */}
         <div className="border-t border-[#E8E1D5] pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-stone-500 gap-4">
-          <div className="flex flex-col sm:flex-row items-center gap-2 text-center sm:text-left">
+          <div className="flex items-center text-center sm:text-left">
             <p>© {new Date().getFullYear()} GauAashray Foundation. All rights reserved.</p>
-            <span className="hidden sm:inline text-stone-300">•</span>
-            <p className="text-stone-600 font-medium">
-              Dedicated to Cattle Welfare, Dharma & Ahimsa 🌿
-            </p>
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-4 text-[11px]">
