@@ -42,12 +42,6 @@ const HERO_IMAGES = [
         title: 'Loving Care and Natural Green Pastures'
     },
     {
-        url: 'https://images.unsplash.com/photo-1582533561751-ef6f6ab93a2e?auto=format&fit=crop&w=1200&q=80',
-        alt: 'Young Calf in Golden Sunlight',
-        tag: 'मातृवत गौमाता',
-        title: 'Special Nutrition & Loving Care for Calves'
-    },
-    {
         url: 'https://images.unsplash.com/photo-1541625602330-2277a4c46182?auto=format&fit=crop&w=1200&q=80',
         alt: 'Cow Sheltered in Grassy Farm',
         tag: 'गौ आश्रय धाम',
